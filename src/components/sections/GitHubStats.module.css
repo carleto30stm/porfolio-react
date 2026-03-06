@@ -1,0 +1,124 @@
+.section {
+  padding: var(--section-padding);
+  background: var(--bg-secondary);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Stats row */
+.statsRow {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.loadingText,
+.errorText {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  padding: 1rem;
+}
+
+.errorText {
+  color: var(--accent-pink);
+}
+
+/* Stat card */
+.statCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 140px;
+  cursor: default;
+  transition: var(--transition);
+}
+
+.statCard:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.statIcon {
+  font-size: 1.5rem;
+  color: var(--accent-cyan);
+  margin-bottom: 0.25rem;
+}
+
+.statValue {
+  font-size: 2.25rem;
+  font-weight: 800;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* Graph */
+.graphWrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 860px;
+}
+
+.graphHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.graphIcon {
+  font-size: 1.1rem;
+  color: var(--accent-cyan);
+}
+
+.chartImg {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  opacity: 0.85;
+  filter: hue-rotate(0deg);
+}
+
+/* Contribution calendar grid */
+.calendarGrid {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding: 6px 0;
+}
+.week {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.day {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  border: 1px solid rgba(0,0,0,0.06);
+}

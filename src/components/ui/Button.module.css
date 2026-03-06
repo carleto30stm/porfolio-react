@@ -1,0 +1,71 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Sizes */
+.sm {
+  padding: 0.375rem 0.875rem;
+  font-size: 0.8125rem;
+}
+
+.md {
+  padding: 0.625rem 1.375rem;
+  font-size: 0.9375rem;
+}
+
+.lg {
+  padding: 0.875rem 1.75rem;
+  font-size: 1.0625rem;
+}
+
+/* Variants */
+.primary {
+  background: var(--gradient-main);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.25);
+}
+
+.primary:hover {
+  box-shadow: 0 6px 25px rgba(0, 212, 255, 0.4);
+}
+
+.secondary {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.secondary:hover {
+  border-color: var(--accent-cyan);
+  background: var(--bg-card-hover);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--accent-cyan);
+}
+
+.ghost:hover {
+  background: rgba(0, 212, 255, 0.08);
+}
+
+.outline {
+  background: transparent;
+  color: var(--accent-cyan);
+  border: 1px solid var(--accent-cyan);
+}
+
+.outline:hover {
+  background: rgba(0, 212, 255, 0.1);
+  box-shadow: var(--shadow-glow);
+}

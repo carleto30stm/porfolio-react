@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Carlos",
+    "roles": ["Fullstack Developer", "Backend Engineer", "Frontend Craftsman", "Problem Solver"],
+    "description": "Passionate Fullstack Developer who loves building robust and scalable digital solutions. I turn ideas into real products with clean code and best practices.",
+    "cta_projects": "View Projects",
+    "cta_contact": "Contact Me",
+    "scroll": "Scroll to explore"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "A little about who I am",
+    "paragraph1": "I'm a Fullstack Developer with over 5 years of experience building modern web applications. I specialize in the JavaScript/TypeScript stack on both the frontend with React and the backend with Node.js.",
+    "paragraph2": "I'm passionate about writing clean, scalable, and well-documented code. I enjoy solving complex problems and always look for opportunities to learn new technologies.",
+    "paragraph3": "When I'm not coding, I like to contribute to open source projects, write technical articles, and keep growing as a professional.",
+    "stats": {
+      "experience": "Years of Experience",
+      "projects": "Projects Completed",
+      "technologies": "Technologies"
+    },
+    "download_cv": "Download CV"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies and tools",
+    "categories": {
+      "all": "All",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Databases",
+      "devops": "DevOps",
+      "tools": "Tools"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "What I've built",
+    "filters": {
+      "all": "All",
+      "fullstack": "Fullstack",
+      "frontend": "Frontend",
+      "backend": "Backend"
+    },
+    "view_code": "Code",
+    "view_demo": "Demo",
+    "view_details": "View Details",
+    "close": "Close",
+    "tech_stack": "Tech Stack",
+    "featured": "Featured"
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "My professional journey",
+    "work": "Work",
+    "education": "Education",
+    "present": "Present"
+  },
+  "stats": {
+    "title": "GitHub Stats",
+    "subtitle": "My activity on GitHub",
+    "repos": "Repositories",
+    "followers": "Followers",
+    "following": "Following",
+    "loading": "Loading stats...",
+    "error": "Could not load stats"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's talk about your project",
+    "name": "Your Name",
+    "email": "Your Email",
+    "subject": "Subject",
+    "message": "Your Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "There was an error. Please try again.",
+    "name_placeholder": "John Smith",
+    "email_placeholder": "john@example.com",
+    "subject_placeholder": "Project proposal",
+    "message_placeholder": "Tell me about your project...",
+    "info": {
+      "email": "Email",
+      "location": "Location",
+      "availability": "Availability",
+      "location_value": "Argentina / Remote",
+      "availability_value": "Available for projects"
+    }
+  },
+  "footer": {
+    "made_with": "Made with",
+    "by": "by Carlos",
+    "rights": "All rights reserved"
+  }
+}

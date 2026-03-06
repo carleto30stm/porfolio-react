@@ -1,0 +1,65 @@
+import type { Experience } from '../types';
+
+export const experiences: Experience[] = [
+  {
+    id: '1',
+    role: 'Senior Fullstack Developer',
+    company: 'Tech Startup SL',
+    period: '2022 - Presente',
+    startDate: '2022-03',
+    description: [
+      'Desarrollo de plataforma SaaS con React + Node.js sirviendo a mas de 5,000 usuarios activos.',
+      'Diseño e implementacion de arquitectura de microservicios con Docker y Railway.',
+      'Liderazgo tecnico de equipo de 4 desarrolladores, code reviews y mentoring.',
+      'Reduccion del tiempo de carga un 40% mediante lazy loading y optimizacion de queries.',
+    ],
+    tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker', 'Redis'],
+    type: 'work',
+  },
+  {
+    id: '2',
+    role: 'Fullstack Developer',
+    company: 'Digital Agency XYZ',
+    period: '2020 - 2022',
+    startDate: '2020-06',
+    endDate: '2022-02',
+    description: [
+      'Desarrollo de aplicaciones web a medida para clientes en sectores retail y educacion.',
+      'Integracion de APIs de terceros: Stripe, SendGrid, Google Maps, OAuth.',
+      'Implementacion de pipelines CI/CD con GitHub Actions.',
+      'Migracion de aplicaciones legacy a stack moderno React + Express.',
+    ],
+    tech: ['React', 'Vue.js', 'Node.js', 'MongoDB', 'Express', 'AWS'],
+    type: 'work',
+  },
+  {
+    id: '3',
+    role: 'Junior Developer',
+    company: 'Freelance',
+    period: '2019 - 2020',
+    startDate: '2019-01',
+    endDate: '2020-05',
+    description: [
+      'Desarrollo de sitios web y landing pages para pequenas empresas.',
+      'Creacion de APIs REST con Node.js y Express.',
+      'Implementacion de sistemas de autenticacion y gestion de usuarios.',
+    ],
+    tech: ['JavaScript', 'HTML', 'CSS', 'Node.js', 'MySQL'],
+    type: 'work',
+  },
+  {
+    id: '4',
+    role: 'Ingenieria en Sistemas Informaticos',
+    company: 'Universidad Tecnologica',
+    period: '2015 - 2019',
+    startDate: '2015-09',
+    endDate: '2019-06',
+    description: [
+      'Grado en Ingenieria en Sistemas Informaticos con especializacion en desarrollo de software.',
+      'Proyecto final: Plataforma de gestion educativa con React y Node.js.',
+      'Participacion en hackathons universitarios (2x ganador).',
+    ],
+    tech: ['Java', 'Python', 'C++', 'SQL', 'Linux'],
+    type: 'education',
+  },
+];

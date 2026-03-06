@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mi",
+    "skills": "Skills",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Carlos",
+    "roles": ["Fullstack Developer", "Backend Engineer", "Frontend Craftsman", "Problem Solver"],
+    "description": "Desarrollador Fullstack apasionado por crear soluciones digitales robustas y escalables. Transformo ideas en productos reales con codigo limpio y buenas practicas.",
+    "cta_projects": "Ver Proyectos",
+    "cta_contact": "Contactame",
+    "scroll": "Scroll para explorar"
+  },
+  "about": {
+    "title": "Sobre Mi",
+    "subtitle": "Un poco de quien soy",
+    "paragraph1": "Soy un desarrollador Fullstack con mas de 5 anos de experiencia construyendo aplicaciones web modernas. Me especializo en el stack JavaScript/TypeScript tanto en el frontend con React como en el backend con Node.js.",
+    "paragraph2": "Me apasiona escribir codigo limpio, escalable y bien documentado. Disfruto resolviendo problemas complejos y siempre estoy buscando aprender nuevas tecnologias.",
+    "paragraph3": "Cuando no estoy programando, me gusta contribuir a proyectos open source, escribir articulos tecnicos y seguir creciendo como profesional.",
+    "stats": {
+      "experience": "Anos de Experiencia",
+      "projects": "Proyectos Completados",
+      "technologies": "Tecnologias"
+    },
+    "download_cv": "Descargar CV"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Tecnologias y herramientas",
+    "categories": {
+      "all": "Todas",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Bases de Datos",
+      "devops": "DevOps",
+      "tools": "Herramientas"
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Lo que he construido",
+    "filters": {
+      "all": "Todos",
+      "fullstack": "Fullstack",
+      "frontend": "Frontend",
+      "backend": "Backend"
+    },
+    "view_code": "Codigo",
+    "view_demo": "Demo",
+    "view_details": "Ver Detalle",
+    "close": "Cerrar",
+    "tech_stack": "Stack Tecnologico",
+    "featured": "Destacado"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "subtitle": "Mi trayectoria profesional",
+    "work": "Trabajo",
+    "education": "Educacion",
+    "present": "Presente"
+  },
+  "stats": {
+    "title": "GitHub Stats",
+    "subtitle": "Mi actividad en GitHub",
+    "repos": "Repositorios",
+    "followers": "Seguidores",
+    "following": "Siguiendo",
+    "loading": "Cargando stats...",
+    "error": "No se pudieron cargar las stats"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Hablemos de tu proyecto",
+    "name": "Tu Nombre",
+    "email": "Tu Email",
+    "subject": "Asunto",
+    "message": "Tu Mensaje",
+    "send": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "success": "Mensaje enviado correctamente!",
+    "error": "Hubo un error. Intentalo de nuevo.",
+    "name_placeholder": "Juan Garcia",
+    "email_placeholder": "juan@ejemplo.com",
+    "subject_placeholder": "Propuesta de proyecto",
+    "message_placeholder": "Cuentame sobre tu proyecto...",
+    "info": {
+      "email": "Email",
+      "location": "Ubicacion",
+      "availability": "Disponibilidad",
+      "location_value": "Argentina / Remoto",
+      "availability_value": "Disponible para proyectos"
+    }
+  },
+  "footer": {
+    "made_with": "Hecho con",
+    "by": "por Carlos",
+    "rights": "Todos los derechos reservados"
+  }
+}
