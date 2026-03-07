@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { FiGithub, FiLinkedin, FiTwitter, FiHeart } from 'react-icons/fi';
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import styles from './Footer.module.css';
 
 const Footer: React.FC = () => {
@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <p className={styles.copy}>
-          {t('footer.made_with')} <FiHeart className={styles.heart} /> {t('footer.by')} &mdash;{' '}
+          {t('footer.made_with')} {t('footer.by')} &mdash;{' '}
           {year} &copy; {t('footer.rights')}
         </p>
         <div className={styles.socials}>
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
             <FiGithub />
           </a>
           <a
-            href="https://linkedin.com/in/carlos"
+            href="https://linkedin.com/in/carloscampuzanotorres"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
           >
             <FiLinkedin />
           </a>
-          <a
+          {/* <a
             href="https://twitter.com/carlos"
             target="_blank"
             rel="noopener noreferrer"
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
             className={styles.socialLink}
           >
             <FiTwitter />
-          </a>
+          </a> */}
         </div>
       </div>
     </footer>

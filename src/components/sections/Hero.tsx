@@ -87,7 +87,7 @@ const Hero: React.FC = () => {
               <FiGithub />
             </a>
             <a
-              href="https://linkedin.com/in/carlos"
+              href="https://linkedin.com/in/carloscampuzanotorres"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}

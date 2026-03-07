@@ -40,8 +40,8 @@ const About: React.FC = () => {
         >
           <div className={styles.avatarWrap}>
             <div className={styles.avatarRing} />
-            <div className={styles.avatar}>
-              <span className={styles.avatarInitials}>C</span>
+            <div className={styles.avatar}>         
+              <span className={styles.avatarInitials}> <img src="/avatar.jpg" alt={t('about.avatar_alt')} className={styles.avatarImage} /></span>
             </div>
           </div>
 
@@ -102,7 +102,7 @@ const About: React.FC = () => {
           >
             <Button
               as="a"
-              href="/cv.pdf"
+              href="https://drive.google.com/uc?export=download&id=1MQxM4DTQHQlICMccqbkFycnEczMC63DZ"
               variant="primary"
               size="md"
               external
