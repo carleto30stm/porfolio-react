@@ -50,10 +50,17 @@
   display: flex;
   flex-direction: column;
   gap: 0.875rem;
-  cursor: pointer;
+  cursor: grab;
   transition: var(--transition-cinematic, var(--transition));
   position: relative;
   overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.card:active {
+  cursor: grabbing;
 }
 
 /* Cinematic light sweep on hover */

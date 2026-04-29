@@ -16,6 +16,7 @@ const Projects: React.FC = () => {
   const { ref, inView } = useInView();
   const [filter, setFilter] = useState<Filter>('all');
   const [selected, setSelected] = useState<Project | null>(null);
+  const isDragging = React.useRef(false);
 
   const filters: Filter[] = ['all', 'fullstack', 'frontend', 'backend'];
 
@@ -70,8 +71,23 @@ const Projects: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.35, delay: i * 0.06 }}
+                /* ── Looney Tunes drag ── */
+                drag
+                dragSnapToOrigin
+                dragElastic={0.85}
+                dragTransition={{ bounceStiffness: 620, bounceDamping: 5 }}
+                onDragStart={() => { isDragging.current = true; }}
+                onDragEnd={() => { setTimeout(() => { isDragging.current = false; }, 80); }}
                 whileHover={{ y: -6 }}
-                onClick={() => setSelected(project)}
+                whileDrag={{
+                  scale: 1.13,
+                  rotate: 7,
+                  zIndex: 60,
+                  boxShadow: '0 30px 80px rgba(201,162,39,0.6), 0 0 0 2px #e8b55a',
+                  filter: 'brightness(1.18) saturate(1.25)',
+                  cursor: 'grabbing',
+                }}
+                onClick={() => { if (!isDragging.current) setSelected(project); }}
               >
                 {/* Card top */}
                 <div className={styles.cardTop}>
