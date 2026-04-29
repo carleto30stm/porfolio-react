@@ -30,6 +30,15 @@ const About: React.FC = () => {
 
   return (
     <section id="about" className={styles.about}>
+      <motion.div
+        className="scene-label"
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : undefined}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}
+      >
+        ACT II &mdash; BACKSTORY
+      </motion.div>
       <div className={`container ${styles.inner}`} ref={ref}>
         {/* Avatar placeholder */}
         <motion.div

@@ -20,9 +20,18 @@
   --gradient-main: linear-gradient(135deg, #00d4ff, #8b5cf6);
   --gradient-card: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(139, 92, 246, 0.05));
 
+  /* Cinematic palette */
+  --accent-gold: #c9a227;
+  --accent-amber: #e8b55a;
+  --gradient-gold: linear-gradient(135deg, #c9a227, #e8b55a);
+  --gradient-cinematic: linear-gradient(135deg, #f1f5f9 0%, #e8b55a 100%);
+
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-label: 'Bebas Neue', Impact, sans-serif;
+  --transition-cinematic: all 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   /* Spacing */
   --section-padding: 5rem 0;
@@ -127,13 +136,16 @@ img {
 }
 
 .section-header h2 {
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 700;
-  background: var(--gradient-main);
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-weight: 600;
+  font-style: italic;
+  background: var(--gradient-cinematic);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
 }
 
 .section-header p {
@@ -154,15 +166,62 @@ img {
   box-shadow: var(--shadow-glow);
 }
 
-/* Noise background overlay (subtle texture) */
+/* Cinematic scene label */
+.scene-label {
+  font-family: var(--font-label);
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0.8;
+}
+.scene-label::before {
+  content: '';
+  display: inline-block;
+  width: 2.5rem;
+  height: 1px;
+  background: var(--accent-gold);
+  opacity: 0.6;
+}
+
+/* Cinema divider (gold horizontal line) */
+.cinema-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold) 30%, var(--accent-gold) 70%, transparent);
+  opacity: 0.35;
+  margin: 0 auto;
+}
+
+/* Film grain overlay (animated) */
 body::before {
   content: '';
   position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
-  z-index: 0;
-  opacity: 0.4;
+  z-index: 9999;
+  opacity: 0.55;
+  animation: film-grain-shift 0.25s steps(1) infinite;
+}
+
+/* Cinematic vignette */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 110% 110% at 50% 50%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.18) 65%,
+    rgba(0, 0, 0, 0.42) 100%
+  );
+  pointer-events: none;
+  z-index: 9998;
 }
 
 /* Animations */
@@ -185,4 +244,29 @@ body::before {
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+/* Cinematic keyframes */
+@keyframes film-grain-shift {
+  0%   { transform: translate(0, 0); }
+  10%  { transform: translate(-0.8%, -1.5%); }
+  20%  { transform: translate(1.5%, 0.5%); }
+  30%  { transform: translate(-1.5%, 1.5%); }
+  40%  { transform: translate(0.8%, -0.8%); }
+  50%  { transform: translate(-0.8%, 2%); }
+  60%  { transform: translate(1.5%, -1.5%); }
+  70%  { transform: translate(-2%, 0.8%); }
+  80%  { transform: translate(0.8%, 1.5%); }
+  90%  { transform: translate(-0.8%, -0.8%); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes cinema-reveal {
+  0%   { opacity: 0; transform: scale(1.04); filter: blur(8px); }
+  100% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+@keyframes title-fade-in {
+  0%   { opacity: 0; letter-spacing: 0.4em; }
+  100% { opacity: 1; letter-spacing: 0.01em; }
 }

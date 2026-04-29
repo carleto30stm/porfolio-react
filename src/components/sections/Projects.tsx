@@ -26,6 +26,15 @@ const Projects: React.FC = () => {
     <section id="projects" className={styles.section}>
       <div className="container">
         <motion.div
+          className="scene-label"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : undefined}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}
+        >
+          ACT IV &mdash; PORTFOLIO
+        </motion.div>
+        <motion.div
           className="section-header"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : undefined}

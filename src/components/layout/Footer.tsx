@@ -3,17 +3,29 @@ import { useTranslation } from 'react-i18next';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import styles from './Footer.module.css';
 
+const toRoman = (num: number): string => {
+  const vals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  const syms = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+  let result = '';
+  for (let i = 0; i < vals.length; i++) {
+    while (num >= vals[i]) { result += syms[i]; num -= vals[i]; }
+  }
+  return result;
+};
+
 const Footer: React.FC = () => {
   const { t } = useTranslation();
-  const year = new Date().getFullYear();
+  const romanYear = toRoman(new Date().getFullYear());
 
   return (
     <footer className={styles.footer}>
+      <div className={styles.goldLine} />
       <div className={styles.inner}>
-        <p className={styles.copy}>
-          {t('footer.made_with')} {t('footer.by')} &mdash;{' '}
-          {year} &copy; {t('footer.rights')}
-        </p>
+        <div className={styles.credits}>
+          <span className={styles.creditsLabel}>{t('footer.produced_by')}</span>
+          <span className={styles.creditsName}>Carlos Campuzano Torres</span>
+        </div>
+        <p className={styles.year}>{romanYear}</p>
         <div className={styles.socials}>
           <a
             href="https://github.com/carleto30stm"
@@ -33,17 +45,9 @@ const Footer: React.FC = () => {
           >
             <FiLinkedin />
           </a>
-          {/* <a
-            href="https://twitter.com/carlos"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-            className={styles.socialLink}
-          >
-            <FiTwitter />
-          </a> */}
         </div>
       </div>
+      <div className={styles.goldLine} />
     </footer>
   );
 };

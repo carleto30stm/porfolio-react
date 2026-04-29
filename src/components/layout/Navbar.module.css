@@ -40,12 +40,17 @@
 }
 
 .logoSymbol {
-  color: var(--accent-cyan);
+  color: var(--accent-gold);
+  font-size: 0.9em;
 }
 
 .logoName {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
   color: var(--text-primary);
   margin: 0 0.15rem;
+  letter-spacing: 0.04em;
 }
 
 /* Nav links */
@@ -75,11 +80,12 @@
   left: 50%;
   transform: translateX(-50%);
   width: 0;
-  height: 2px;
-  background: var(--gradient-main);
+  height: 1px;
+  background: var(--accent-gold);
   border-radius: var(--radius-full);
   transition: var(--transition);
 }
+
 
 .navLink:hover {
   color: var(--text-primary);
@@ -91,7 +97,7 @@
 }
 
 .navLink.active {
-  color: var(--accent-cyan);
+  color: var(--accent-gold);
 }
 
 /* Actions */

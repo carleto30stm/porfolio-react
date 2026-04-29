@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import type { Variants } from 'framer-motion';
+import type {Variants } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FiGithub, FiLinkedin, FiArrowDown } from 'react-icons/fi';
 import { useTypingEffect } from '../../hooks/useTypingEffect';
@@ -21,6 +21,7 @@ const item: Variants = {
 };
 
 const Hero: React.FC = () => {
+
   const { t } = useTranslation();
   const roles = t('hero.roles', { returnObjects: true }) as string[];
   const { text } = useTypingEffect({ words: roles });
@@ -37,6 +38,23 @@ const Hero: React.FC = () => {
       {/* Floating blobs */}
       <div className={styles.blobCyan} aria-hidden />
       <div className={styles.blobPurple} aria-hidden />
+      <div className={styles.blobAmber} aria-hidden />
+
+      {/* Cinematic letterbox bars */}
+      <div className={styles.letterboxTop} aria-hidden />
+      <div className={styles.letterboxBottom} aria-hidden />
+
+      {/* ACT Label - Center of section */}
+      <motion.div
+        className="scene-label"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem', zIndex: 5 }}
+        aria-hidden="true"
+      >
+        ACT I &mdash; ORIGIN
+      </motion.div>
 
       <div className={styles.content}>
         <motion.div className={styles.textBlock} variants={container} initial="hidden" animate="show">
@@ -47,6 +65,10 @@ const Hero: React.FC = () => {
           <motion.h1 className={styles.name} variants={item}>
             {t('hero.name')}
           </motion.h1>
+
+          <motion.p className={styles.cinemaSubtitle} variants={item}>
+            {t('hero.cinemaSubtitle')}
+          </motion.p>
 
           <motion.div className={styles.roleWrapper} variants={item}>
             <span className={styles.rolePrefix}>&lt;</span>
@@ -112,18 +134,20 @@ const Hero: React.FC = () => {
             <span className={styles.codeFileName}>carlos.ts</span>
           </div>
           <pre className={styles.codeBody}>
-            <code>{`const developer = {
-  name: "Carlos",
-  role: "Fullstack Dev",
-  stack: [
+            <code>{
+`const carlos = {
+  director: "Carlos C.T",
+  genre: "Fullstack Dev",
+  cinematography: [
     "React", "TypeScript",
-    "Node.js", "PostgreSQL"
   ],
-  passion: "Clean Code",
-  available: true,
-};
-
-export default developer;`}</code>
+  soundtrack: [
+    "Node.js", "PostgreSQL",
+  ],
+  status: "In Production",
+  rating: "⭐ 9.3 / 10",
+ };
+ export default carlos;`}</code>
           </pre>
         </motion.div>
       </div>

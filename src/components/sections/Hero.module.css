@@ -12,8 +12,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(201, 162, 39, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.02) 1px, transparent 1px);
   background-size: 50px 50px;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
 }
@@ -45,6 +45,45 @@
   animation: float 10s ease-in-out infinite reverse;
 }
 
+.blobAmber {
+  width: 450px;
+  height: 450px;
+  top: 40%;
+  left: 55%;
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.06), transparent 70%);
+  animation: float 14s ease-in-out infinite;
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* Cinematic letterbox bars */
+.letterboxTop,
+.letterboxBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201, 162, 39, 0.5) 20%,
+    rgba(201, 162, 39, 0.5) 80%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.letterboxTop {
+  top: 72px;
+}
+
+.letterboxBottom {
+  bottom: 56px;
+}
+
 /* Content layout */
 .content {
   max-width: var(--container-max);
@@ -74,29 +113,98 @@
   gap: 0.5rem;
 }
 
+.actLabel {
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  letter-spacing: 0.5em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  opacity: 1;
+  font-weight: 600;
+  white-space: nowrap;
+  
+  /* Positioning */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  pointer-events: none;
+  margin-left: -50%;
+  margin-top: -0.5em;
+}
+
+.actLabel::before,
+.actLabel::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 1px;
+  background: var(--accent-gold);
+  opacity: 0.7;
+}
+
+.cinemaSubtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: var(--accent-amber);
+  opacity: 0.85;
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+  max-width: 460px;
+}
+
 .greetingBracket {
   opacity: 0.5;
 }
 
 .name {
-  font-size: clamp(3rem, 7vw, 5rem);
-  font-weight: 800;
-  line-height: 1.05;
-  background: var(--gradient-main);
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 10vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.9;
+  background: linear-gradient(135deg, #f1f5f9 30%, var(--accent-amber) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 /* Typing role */
+
 .roleWrapper {
   display: flex;
   align-items: center;
-  gap: 0.2rem;
-  font-family: var(--font-mono);
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  color: var(--text-secondary);
+  gap: 0.18em;
+  font-family: 'IBM Plex Mono', 'Fira Mono', 'JetBrains Mono', 'Courier New', Courier, monospace;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  color: #e2e0d2;
+  background: rgba(30, 28, 22, 0.13);
+  border-radius: 0.18em;
+  padding: 0.18em 0.5em 0.18em 0.5em;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12), 0 1px 0 #b6b09a inset;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 0 #b6b09a, 0 0 2px #000;
+  position: relative;
+  animation: typewriter-glow 2.2s infinite alternate;
+}
+
+@keyframes typewriter-glow {
+  0%, 100% { box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12), 0 1px 0 #b6b09a inset; }
+  50% { box-shadow: 0 2px 18px 0 rgba(255,255,200,0.13), 0 1px 0 #b6b09a inset; }
+}
+
+.role {
+  color: #f8f8f2;
+  font-weight: 600;
+  text-shadow: 0 1px 0 #b6b09a, 0 0 2px #000;
+  letter-spacing: 0.06em;
+  font-variant-ligatures: none;
+  font-family: inherit;
 }
 
 .rolePrefix,

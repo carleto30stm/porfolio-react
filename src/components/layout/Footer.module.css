@@ -1,13 +1,25 @@
 .footer {
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--border);
-  padding: 1.75rem 0;
+  background: var(--bg-primary);
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.goldLine {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201, 162, 39, 0.5) 25%,
+    rgba(201, 162, 39, 0.5) 75%,
+    transparent 100%
+  );
+  margin: 0 2rem;
 }
 
 .inner {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,17 +27,35 @@
   gap: 1rem;
 }
 
-.copy {
-  color: var(--text-muted);
-  font-size: 0.875rem;
+.credits {
   display: flex;
-  align-items: center;
-  gap: 0.35rem;
+  flex-direction: column;
+  gap: 0.1rem;
 }
 
-.heart {
-  color: var(--accent-pink);
-  animation: pulse-glow 2s infinite;
+.creditsLabel {
+  font-family: var(--font-label);
+  font-size: 0.55rem;
+  letter-spacing: 0.35em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.creditsName {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+}
+
+.year {
+  font-family: var(--font-label);
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  opacity: 0.45;
 }
 
 .socials {
@@ -41,7 +71,7 @@
 }
 
 .socialLink:hover {
-  color: var(--accent-cyan);
+  color: var(--accent-gold);
   transform: translateY(-2px);
 }
 

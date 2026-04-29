@@ -14,16 +14,17 @@
     "description": "Desarrollador Fullstack apasionado por crear soluciones digitales robustas y escalables. Transformo ideas en productos reales con codigo limpio y buenas practicas.",
     "cta_projects": "Ver Proyectos",
     "cta_contact": "Contactame",
+    "cinemaSubtitle": "Lo único que depende de nosotros es decidir qué hacer con la época que nos ha tocado.",
     "scroll": "Scroll para explorar"
   },
   "about": {
     "title": "Sobre Mi",
     "subtitle": "Un poco de quien soy",
-    "paragraph1": "Soy un desarrollador Fullstack con mas de 5 anos de experiencia construyendo aplicaciones web modernas. Me especializo en el stack JavaScript/TypeScript tanto en el frontend con React como en el backend con Node.js.",
+    "paragraph1": "Soy un desarrollador Fullstack con años de experiencia construyendo aplicaciones web modernas. Me especializo en el stack JavaScript/TypeScript tanto en el frontend con React como en el backend con Node.js.",
     "paragraph2": "Me apasiona escribir codigo limpio, escalable y bien documentado. Disfruto resolviendo problemas complejos y siempre estoy buscando aprender nuevas tecnologias.",
     "paragraph3": "Cuando no estoy programando, me gusta contribuir a proyectos open source, escribir articulos tecnicos y seguir creciendo como profesional.",
     "stats": {
-      "experience": "Anos de Experiencia",
+      "experience": "Años de Experiencia",
       "projects": "Proyectos Completados",
       "technologies": "Tecnologias"
     },
@@ -99,6 +100,7 @@
   "footer": {
     "made_with": "Hecho ",
     "by": "por Carlos",
-    "rights": "Todos los derechos reservados"
+    "rights": "Todos los derechos reservados",
+    "produced_by": "Producido por"
   }
 }
