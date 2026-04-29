@@ -2,6 +2,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import styles from './Footer.module.css';
+import { FaTiktok } from 'react-icons/fa';
+import { GITHUB_LINK, LINKEDIN_LINK, TIKTOK_LINK } from '../../data/constants';
 
 const toRoman = (num: number): string => {
   const vals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
@@ -28,7 +30,7 @@ const Footer: React.FC = () => {
         <p className={styles.year}>{romanYear}</p>
         <div className={styles.socials}>
           <a
-            href="https://github.com/carleto30stm"
+            href={GITHUB_LINK}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -37,7 +39,7 @@ const Footer: React.FC = () => {
             <FiGithub />
           </a>
           <a
-            href="https://linkedin.com/in/carloscampuzanotorres"
+            href={LINKEDIN_LINK}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -45,6 +47,16 @@ const Footer: React.FC = () => {
           >
             <FiLinkedin />
           </a>
+          <a
+            href={TIKTOK_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok"
+            className={styles.socialLink}
+          >
+            <FaTiktok />
+          </a>
+
         </div>
       </div>
       <div className={styles.goldLine} />

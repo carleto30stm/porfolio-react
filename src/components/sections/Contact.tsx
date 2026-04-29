@@ -6,6 +6,8 @@ import { useForm, ValidationError } from '@formspree/react';
 import { useInView } from '../../hooks/useInView';
 import Button from '../ui/Button';
 import styles from './Contact.module.css';
+import { FaTiktok } from 'react-icons/fa';
+import { GITHUB_LINK, LINKEDIN_LINK, TIKTOK_LINK } from '../../data/constants';
 
 const FORMSPREE_ID = (import.meta.env as Record<string, string>).VITE_FORMSPREE_ID || 'mpqyzorz';
 
@@ -86,13 +88,17 @@ const Contact: React.FC = () => {
 
             {/* Social */}
             <div className={styles.socialLinks}>
-              <a href="https://github.com/carleto30stm" target="_blank" rel="noopener noreferrer" className={styles.socialBtn}>
+              <a href={GITHUB_LINK} target="_blank" rel="noopener noreferrer" className={styles.socialBtn}>
                 <FiGithub /> GitHub
               </a>
-              <a href="https://linkedin.com/in/carloscampuzanotorres" target="_blank" rel="noopener noreferrer" className={styles.socialBtn}>
+              <a href={LINKEDIN_LINK} target="_blank" rel="noopener noreferrer" className={styles.socialBtn}>
                 <FiLinkedin /> LinkedIn
               </a>
+              <a href={TIKTOK_LINK} target="_blank" rel="noopener noreferrer" className={styles.socialBtn}>
+                <FaTiktok /> TikTok
+              </a>
             </div>
+
           </motion.div>
 
           {/* ── Terminal form ── */}

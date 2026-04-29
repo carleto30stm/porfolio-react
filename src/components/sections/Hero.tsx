@@ -3,9 +3,11 @@ import { motion } from 'framer-motion';
 import type {Variants } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FiGithub, FiLinkedin, FiArrowDown } from 'react-icons/fi';
+import { FaTiktok } from "react-icons/fa";
 import { useTypingEffect } from '../../hooks/useTypingEffect';
 import Button from '../ui/Button';
 import styles from './Hero.module.css';
+import { GITHUB_LINK, LINKEDIN_LINK, TIKTOK_LINK } from '../../data/constants';
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -100,7 +102,7 @@ const Hero: React.FC = () => {
 
           <motion.div className={styles.socials} variants={item}>
             <a
-              href="https://github.com/carleto30stm"
+              href={GITHUB_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
@@ -109,13 +111,22 @@ const Hero: React.FC = () => {
               <FiGithub />
             </a>
             <a
-              href="https://linkedin.com/in/carloscampuzanotorres"
+              href={LINKEDIN_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
               aria-label="LinkedIn"
             >
               <FiLinkedin />
+            </a>
+            <a
+              href={TIKTOK_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+              aria-label="TikTok"
+            >
+              <FaTiktok />
             </a>
           </motion.div>
         </motion.div>
@@ -142,7 +153,7 @@ const Hero: React.FC = () => {
     "React", "TypeScript",
   ],
   soundtrack: [
-    "Node.js", "PostgreSQL",
+    "Node.js", "Java", "Oracle SQL",
   ],
   status: "In Production",
   rating: "⭐ 9.3 / 10",

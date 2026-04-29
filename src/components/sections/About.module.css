@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-/* Avatar */
+/* Avatar column */
 .avatarCol {
   display: flex;
   flex-direction: column;
@@ -18,43 +18,181 @@
   gap: 2rem;
 }
 
-.avatarWrap {
+/* ── 35mm Film Frame ─────────────────────────── */
+.filmFrame {
+  display: inline-flex;
+  flex-direction: column;
+  background: #090806;
+  border: 3px solid #181410;
+  border-radius: 3px;
+  box-shadow:
+    0 12px 60px rgba(0,0,0,0.85),
+    0 0 0 1px #2a2218,
+    0 0 40px rgba(201,162,39,0.08);
+  animation: filmJitter 9s ease-in-out infinite;
   position: relative;
-  width: 240px;
-  height: 240px;
 }
 
-.avatarRing {
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  background: var(--gradient-main);
-  opacity: 0.6;
-  filter: blur(12px);
-  animation: pulse-glow 3s ease-in-out infinite;
+@keyframes filmJitter {
+  0%,92%,100% { transform: translate(0,0) rotate(0deg); }
+  93%          { transform: translate(-1.5px, 1px) rotate(-0.25deg); }
+  95%          { transform: translate(1px, -1px) rotate(0.2deg); }
+  97%          { transform: translate(-0.8px, 0.8px) rotate(0.1deg); }
+  99%          { transform: translate(0.5px, -0.5px) rotate(-0.1deg); }
 }
 
-.avatar {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  background: var(--bg-card);
-  border: 2px solid var(--border-accent);
+/* Sprocket strips */
+.filmStripTop,
+.filmStripBottom {
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
+  justify-content: space-around;
+  padding: 7px 10px;
+  width: 100%;
+  background: #07060400;
 }
 
-.avatarInitials {
-  font-size: 5rem;
-  font-weight: 800;
-  background: var(--gradient-main);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.sprocket {
+  display: inline-block;
+  width: 14px;
+  height: 9px;
+  background: #07060a;
+  border-radius: 2px;
+  border: 1.5px solid #2a2218;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.6);
+}
+
+/* Image area */
+.filmImageWrap {
+  position: relative;
+  width: 270px;
+  height: 340px;
+  overflow: hidden;
+  border-left: 10px solid #090806;
+  border-right: 10px solid #090806;
+}
+
+.filmImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: sepia(0.28) contrast(1.12) brightness(0.86) saturate(0.88);
+  transition: filter 0.5s ease;
+}
+
+.filmFrame:hover .filmImg {
+  filter: sepia(0.1) contrast(1.08) brightness(0.94) saturate(1.05);
+}
+
+/* Animated film grain */
+.filmGrain {
+  position: absolute;
+  inset: -35%;
+  width: 170%;
+  height: 170%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.28;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  animation: grain 0.35s steps(1) infinite;
+}
+
+@keyframes grain {
+  0%          { transform: translate(0%, 0%); }
+  10%         { transform: translate(-7%, -12%); }
+  20%         { transform: translate(-18%, 6%); }
+  30%         { transform: translate(8%, -28%); }
+  40%         { transform: translate(-6%, 22%); }
+  50%         { transform: translate(-16%, 12%); }
+  60%         { transform: translate(16%, 2%); }
+  70%         { transform: translate(2%, 18%); }
+  80%         { transform: translate(4%, 32%); }
+  90%         { transform: translate(-12%, 8%); }
+  100%        { transform: translate(0%, 0%); }
+}
+
+/* Vignette */
+.filmVignette {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 80% 75% at 50% 48%,
+    transparent 48%,
+    rgba(0,0,0,0.75) 100%
+  );
+}
+
+/* Light leaks */
+.filmLeak {
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  width: 55%;
+  height: 45%;
+  z-index: 4;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 0% 0%,
+    rgba(201,162,39,0.22),
+    transparent 68%
+  );
+  mix-blend-mode: screen;
+  animation: leakPulse 6s ease-in-out infinite alternate;
+}
+
+.filmLeakBottom {
+  position: absolute;
+  bottom: -8%;
+  right: -5%;
+  width: 40%;
+  height: 35%;
+  z-index: 4;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 100% 100%,
+    rgba(232,181,90,0.14),
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+  animation: leakPulse 8s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes leakPulse {
+  0%   { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* Frame counter */
+.filmCounter {
+  position: absolute;
+  bottom: 6px;
+  right: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.6rem;
+  color: rgba(201,162,39,0.5);
+  letter-spacing: 0.1em;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Metadata strip */
+.filmMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 14px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.58rem;
+  color: rgba(201,162,39,0.55);
+  letter-spacing: 0.1em;
+  background: transparent;
+  border-top: 1px solid #1c1812;
+  text-transform: uppercase;
 }
 
 /* Feature chips */

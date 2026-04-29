@@ -10,7 +10,7 @@ export const projects: Project[] = [
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Redux', 'Docker'],
     category: 'fullstack',
     github: 'https://github.com/carleto30stm',
-    demo: 'https://demo.example.com',
+    demo: 'https://mypymegestion-production.up.railway.app/',
     featured: true,
   },
   {
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     tech: ['React', 'TypeScript', 'PostgreSQL', 'TailwindCSS', 'JWT', 'Redux', 'Jest', 'Docker', 'NestJS'],
     category: 'fullstack',
     github: 'https://github.com/carleto30stm',
-    demo: 'https://demo.example.com',
+    demo: 'https://consultorios-production.up.railway.app/login',
     featured: true,
   },
   {

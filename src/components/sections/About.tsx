@@ -40,17 +40,40 @@ const About: React.FC = () => {
         ACT II &mdash; BACKSTORY
       </motion.div>
       <div className={`container ${styles.inner}`} ref={ref}>
-        {/* Avatar placeholder */}
+        {/* Avatar — 35mm film frame */}
         <motion.div
           className={styles.avatarCol}
           initial={{ opacity: 0, x: -50 }}
           animate={inView ? { opacity: 1, x: 0 } : undefined}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          <div className={styles.avatarWrap}>
-            <div className={styles.avatarRing} />
-            <div className={styles.avatar}>         
-              <span className={styles.avatarInitials}> <img src="/avatar.jpg" alt={t('about.avatar_alt')} className={styles.avatarImage} /></span>
+          <div className={styles.filmFrame}>
+            {/* Sprocket strip — top */}
+            <div className={styles.filmStripTop}>
+              {[...Array(7)].map((_, i) => <span key={i} className={styles.sprocket} />)}
+            </div>
+
+            {/* Image area */}
+            <div className={styles.filmImageWrap}>
+              <img src="/avatar.jpg" alt="Carlos" className={styles.filmImg} />
+              <div className={styles.filmGrain} aria-hidden />
+              <div className={styles.filmVignette} aria-hidden />
+              <div className={styles.filmLeak} aria-hidden />
+              <div className={styles.filmLeakBottom} aria-hidden />
+              {/* Frame counter overlay */}
+              <span className={styles.filmCounter} aria-hidden>▲ 24A</span>
+            </div>
+
+            {/* Sprocket strip — bottom */}
+            <div className={styles.filmStripBottom}>
+              {[...Array(7)].map((_, i) => <span key={i} className={styles.sprocket} />)}
+            </div>
+
+            {/* Metadata strip */}
+            <div className={styles.filmMeta}>
+              <span>KODAK&nbsp;5213</span>
+              <span>&#9650;&nbsp;35mm</span>
+              <span>©MMXXVI</span>
             </div>
           </div>
 
