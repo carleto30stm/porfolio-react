@@ -131,8 +131,9 @@ const Skills: React.FC = () => {
                   if (floating[skill.name]) land(skill.name);
                 }}
                 whileHover={floating[skill.name] ? {} : { scale: 1.1, y: -3 }}
-                onClick={() => launch(skill.name)}
                 style={{ cursor: floating[skill.name] ? 'default' : 'pointer', position: 'relative' }}
+                onClick={() => launch(skill.name)}
+                onHoverStart={() => launch(skill.name)}
               >
                 {Icon && <Icon className={styles.tagIcon} />}
                 <span className={styles.tagName}>{skill.name}</span>

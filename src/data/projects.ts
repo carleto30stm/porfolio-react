@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     id: '1',
     title: 'Sistema de Gestion Pymes',
-    description: 'Full-stack para gestion de ventas, inventario y clientes en pequenas empresas.',
+    description: 'Full-stack para gestion de ventas, inventario y clientes en pequeñas empresas.',
     longDescription:
       'Plataforma de gestion de pymes completa con autenticacion JWT, integracion con facturacion ARCA , panel de administracion, manejo de inventario y flujo de caja, CC clientes y proveedores',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Redux', 'Docker'],

@@ -38,7 +38,7 @@ export const experiences: Experience[] = [
     startDate: '2019-01',
     endDate: '2020-05',
     description: [
-      'Desarrollo de sitios web y landing pages para pequenas empresas.',
+      'Desarrollo de sitios web y landing pages para pequeñas empresas.',
     ],
     tech: ['JavaScript', 'HTML', 'CSS', 'Node.js', 'MySQL'],
     type: 'work',
@@ -52,8 +52,8 @@ export const experiences: Experience[] = [
     endDate: '2022-12',
     description: [
       'Desarrollo de aplicaciones web full-stack como parte de cursos en Udemy.',
-      'Creacion de proyectos de ejemplo para aprender React, Node.js, Express y bases de datos.',
-      'Participacion en comunidades de estudiantes y resolucion de dudas en foros.',
+      'Creación de proyectos de ejemplo para aprender React, Node.js, Express y bases de datos.',
+      'Participación en comunidades de estudiantes y resolución de dudas en foros.',
     ],
     tech: ['React', 'Node.js', 'MongoDB', 'Javascript', 'MySQL'],
     type: 'education',

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FiBriefcase, FiBook } from 'react-icons/fi';
 import { useInView } from '../../hooks/useInView';
@@ -58,9 +58,11 @@ const Experience: React.FC = () => {
 
         {/* Timeline */}
         <div className={styles.timeline}>
-          {filtered.map((exp, i) => (
-            <TimelineItem key={exp.id} exp={exp} index={i} inView={inView} t={t} />
-          ))}
+          <AnimatePresence mode="popLayout">
+            {filtered.map((exp, i) => (
+              <TimelineItem key={exp.id} exp={exp} index={i} inView={inView} t={t} />
+            ))}
+          </AnimatePresence>
         </div>
       </div>
     </section>
@@ -77,31 +79,58 @@ interface TimelineItemProps {
 const TimelineItem: React.FC<TimelineItemProps> = ({ exp, index, inView, t }) => (
   <motion.div
     className={styles.item}
-    initial={{ opacity: 0, x: -40 }}
-    animate={inView ? { opacity: 1, x: 0 } : undefined}
-    transition={{ duration: 0.5, delay: index * 0.12 }}
+    layout
+    initial={{ opacity: 0, x: -50 }}
+    animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+    exit={{ opacity: 0, x: 40, transition: { duration: 0.22 } }}
+    transition={{ duration: 0.55, delay: index * 0.1, ease: 'easeOut' }}
   >
-    {/* Dot */}
+    {/* Dot + line */}
     <div className={styles.dotWrap}>
-      <div className={styles.dot} />
-      {index < 3 && <div className={styles.line} />}
+      <motion.div
+        className={styles.dot}
+        initial={{ scale: 0 }}
+        animate={inView ? { scale: 1 } : { scale: 0 }}
+        transition={{ type: 'spring', stiffness: 300, delay: index * 0.1 + 0.25 }}
+      />
+      <div className={styles.line} />
     </div>
 
-    {/* Content */}
-    <div className={styles.content}>
+    {/* Card */}
+    <motion.div
+      className={styles.content}
+      whileHover="hover"
+      initial="rest"
+      animate="rest"
+      variants={{
+        rest: { boxShadow: '0 2px 24px 0 rgba(201,162,39,0.06)' },
+        hover: { boxShadow: '0 8px 48px 0 rgba(201,162,39,0.28)', y: -4 },
+      }}
+      transition={{ duration: 0.35 }}
+    >
+      {/* Light sweep */}
+      <div className={styles.cardSweep} aria-hidden />
+
       <div className={styles.header}>
         <div>
           <h3 className={styles.role}>{exp.role}</h3>
           <p className={styles.company}>{exp.company}</p>
         </div>
         <span className={styles.period}>
-          {exp.period}{!exp.endDate ? ` - ${t('experience.present')}` : ''}
+          {exp.period}{!exp.endDate ? ` — ${t('experience.present')}` : ''}
         </span>
       </div>
 
       <ul className={styles.bullets}>
-        {exp.description.map((desc, i) => (
-          <li key={i}>{desc}</li>
+        {exp.description.map((desc, di) => (
+          <motion.li
+            key={di}
+            initial={{ opacity: 0, x: -12 }}
+            animate={inView ? { opacity: 1, x: 0 } : undefined}
+            transition={{ duration: 0.35, delay: index * 0.1 + di * 0.06 + 0.3 }}
+          >
+            {desc}
+          </motion.li>
         ))}
       </ul>
 
@@ -110,7 +139,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ exp, index, inView, t }) =>
           <Badge key={tech} variant="purple">{tech}</Badge>
         ))}
       </div>
-    </div>
+    </motion.div>
   </motion.div>
 );
 
