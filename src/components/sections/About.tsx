@@ -1,11 +1,39 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FiDownload, FiCode, FiLayers, FiZap } from 'react-icons/fi';
 import { useInView } from '../../hooks/useInView';
 import Button from '../ui/Button';
 import styles from './About.module.css';
+
+const FILM_IMAGES = [
+  '/carrucel/avatar.jpg',
+  '/carrucel/carlos_cicli.jpg',
+  '/carrucel/jack.jpg',
+] as const;
+
+const FRAME_LABELS = ['▲ 24A', '▲ 25A', '▲ 26A'] as const;
+
+const filmSlideVariants: Variants = {
+  enter: (dir: number) => ({ y: `${dir * 102}%`, opacity: 0.15 }),
+  center: {
+    y: '0%',
+    opacity: 1,
+    transition: {
+      y: { type: 'spring', stiffness: 260, damping: 26 },
+      opacity: { duration: 0.1 },
+    },
+  },
+  exit: (dir: number) => ({
+    y: `${-dir * 102}%`,
+    opacity: 0.15,
+    transition: {
+      y: { type: 'spring', stiffness: 260, damping: 26 },
+      opacity: { duration: 0.1 },
+    },
+  }),
+};
 
 const STATS = [
   { key: 'experience', value: '5+' },
@@ -27,6 +55,21 @@ const fadeIn = (delay = 0): Variants => ({
 const About: React.FC = () => {
   const { t } = useTranslation();
   const { ref, inView } = useInView();
+  const [frame, setFrame] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  const advance = (dir: 1 | -1) => {
+    setDirection(dir);
+    setFrame(prev => (prev + dir + FILM_IMAGES.length) % FILM_IMAGES.length);
+  };
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setDirection(1);
+      setFrame(prev => (prev + 1) % FILM_IMAGES.length);
+    }, 9500);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <section id="about" className={styles.about}>
@@ -54,14 +97,39 @@ const About: React.FC = () => {
             </div>
 
             {/* Image area */}
-            <div className={styles.filmImageWrap}>
-              <img src="/avatar.jpg" alt="Carlos" className={styles.filmImg} />
+            <div
+              className={styles.filmImageWrap}
+              onClick={() => advance(1)}
+              style={{ cursor: 'pointer' }}
+            >
+              <AnimatePresence custom={direction} mode="popLayout">
+                <motion.img
+                  key={frame}
+                  src={FILM_IMAGES[frame]}
+                  alt={`Film frame ${FRAME_LABELS[frame]}`}
+                  className={styles.filmImg}
+                  custom={direction}
+                  variants={filmSlideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                />
+              </AnimatePresence>
               <div className={styles.filmGrain} aria-hidden />
               <div className={styles.filmVignette} aria-hidden />
               <div className={styles.filmLeak} aria-hidden />
               <div className={styles.filmLeakBottom} aria-hidden />
+              {/* Dot indicators */}
+              <div className={styles.filmDots} aria-hidden>
+                {FILM_IMAGES.map((_, i) => (
+                  <span
+                    key={i}
+                    className={`${styles.filmDot} ${i === frame ? styles.filmDotActive : ''}`}
+                  />
+                ))}
+              </div>
               {/* Frame counter overlay */}
-              <span className={styles.filmCounter} aria-hidden>▲ 24A</span>
+              <span className={styles.filmCounter} aria-hidden>{FRAME_LABELS[frame]}</span>
             </div>
 
             {/* Sprocket strip — bottom */}

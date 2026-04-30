@@ -278,7 +278,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: var(--shadow-md), var(--shadow-glow);
+  box-shadow: 0 2px 28px 0 rgba(201, 162, 39, 0.12);
 }
 
 .codeHeader {
@@ -339,8 +339,8 @@
 }
 
 .scrollIndicator:hover {
-  color: var(--accent-cyan);
-  border-color: var(--border-accent);
+  color: #e8b55a;
+  border-color: #d69016;
 }
 
 /* Responsive */

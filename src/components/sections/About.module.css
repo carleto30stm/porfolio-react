@@ -73,17 +73,45 @@
 }
 
 .filmImg {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center top;
   display: block;
   filter: sepia(0.28) contrast(1.12) brightness(0.86) saturate(0.88);
-  transition: filter 0.5s ease;
+  /* transition removed — Framer Motion handles the animation */
 }
 
 .filmFrame:hover .filmImg {
   filter: sepia(0.1) contrast(1.08) brightness(0.94) saturate(1.05);
+}
+
+/* Film frame dot indicators */
+.filmDots {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.filmDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(201, 162, 39, 0.3);
+  border: 1px solid rgba(201, 162, 39, 0.5);
+  transition: background 0.3s ease;
+}
+
+.filmDotActive {
+  background: rgba(201, 162, 39, 0.9);
+  box-shadow: 0 0 6px rgba(201, 162, 39, 0.6);
 }
 
 /* Animated film grain */
