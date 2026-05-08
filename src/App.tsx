@@ -3,6 +3,7 @@ import Layout from './components/layout/Layout';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Skills from './components/sections/Skills';
+import FilmStudio from './components/sections/FilmStudio';
 import Projects from './components/sections/Projects';
 import Experience from './components/sections/Experience';
 import GitHubStats from './components/sections/GitHubStats';
@@ -16,6 +17,7 @@ const App: React.FC = () => {
       <Hero />
       <About />
       <Skills />
+      <FilmStudio />
       <Projects />
       <Experience />
       <GitHubStats />

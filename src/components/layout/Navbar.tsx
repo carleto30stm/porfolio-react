@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { FiHome, FiUser, FiCpu, FiFolder, FiBriefcase, FiMail, FiX } from 'react-icons/fi';
+import { FiHome, FiUser, FiCpu, FiFilm, FiFolder, FiBriefcase, FiMail, FiX } from 'react-icons/fi';
 import type { Language } from '../../types';
 import styles from './Navbar.module.css';
 
-const NAV_ITEMS = ['home', 'about', 'skills', 'projects', 'experience', 'contact'] as const;
+const NAV_ITEMS = ['home', 'about', 'skills', 'studio', 'projects', 'experience', 'contact'] as const;
 
 const NAV_ICONS: Record<string, React.ElementType> = {
   home: FiHome,
   about: FiUser,
   skills: FiCpu,
+  studio: FiFilm,
   projects: FiFolder,
   experience: FiBriefcase,
   contact: FiMail,
 };
 
-const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI'];
+const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
 const SPROCKET_COUNT = 30;
 
 const Navbar: React.FC = () => {
@@ -213,4 +214,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-

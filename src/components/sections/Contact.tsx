@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}
         >
-          ACT VII &mdash; REACH OUT
+          ACT VIII &mdash; REACH OUT
         </motion.div>
 
         <motion.div

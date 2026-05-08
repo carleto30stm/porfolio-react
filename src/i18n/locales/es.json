@@ -3,6 +3,7 @@
     "home": "Inicio",
     "about": "Sobre Mi",
     "skills": "Skills",
+    "studio": "Estudio",
     "projects": "Proyectos",
     "experience": "Experiencia",
     "contact": "Contacto"
@@ -40,6 +41,68 @@
       "database": "Bases de Datos",
       "devops": "DevOps",
       "tools": "Herramientas"
+    }
+  },
+  "studio": {
+    "title": "Director's Cut",
+    "subtitle": "Ordena las escenas para armar el flujo de una app full-stack.",
+    "monitor": "Monitor de corte",
+    "slate": "Sala de montaje",
+    "take": "Take 05 / Producto",
+    "idleTitle": "Tu turno en montaje",
+    "idleCopy": "Mueve las escenas hasta que el viaje del producto tenga sentido. Despues revisa el corte.",
+    "scoreLabel": "Puntuacion del corte",
+    "reelLabel": "Escenas del producto",
+    "moveUp": "Subir escena",
+    "moveDown": "Bajar escena",
+    "check": "Revisar corte",
+    "shuffle": "Mezclar",
+    "reset": "Reset",
+    "scenes": [
+      {
+        "id": "brief",
+        "title": "Brief y arquitectura",
+        "role": "Acto 01",
+        "cue": "Entender problema, usuario, alcance y decisiones tecnicas."
+      },
+      {
+        "id": "ui",
+        "title": "Interfaz con intencion",
+        "role": "Acto 02",
+        "cue": "Diseñar pantallas claras, accesibles y listas para usar."
+      },
+      {
+        "id": "api",
+        "title": "API y reglas de negocio",
+        "role": "Acto 03",
+        "cue": "Modelar endpoints, validaciones, errores y contratos limpios."
+      },
+      {
+        "id": "data",
+        "title": "Datos persistentes",
+        "role": "Acto 04",
+        "cue": "Guardar, consultar y proteger la informacion importante."
+      },
+      {
+        "id": "deploy",
+        "title": "Deploy y observacion",
+        "role": "Acto 05",
+        "cue": "Publicar, medir, ajustar y dejar el producto respirando."
+      }
+    ],
+    "results": {
+      "perfect": {
+        "title": "Corte final aprobado",
+        "copy": "Ese es el ritmo: Carlos conecta producto, frontend, backend, datos y entrega sin perder continuidad."
+      },
+      "close": {
+        "title": "Buen montaje",
+        "copy": "La historia casi esta. Falta afinar alguna transicion tecnica, justo donde un full-stack suma criterio."
+      },
+      "retry": {
+        "title": "Necesita otra toma",
+        "copy": "Todavia hay escenas fuera de continuidad. Reordenalas y busca el flujo natural de una app real."
+      }
     }
   },
   "projects": {

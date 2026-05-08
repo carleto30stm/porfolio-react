@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}
         >
-          ACT IV &mdash; PORTFOLIO
+          ACT V &mdash; PORTFOLIO
         </motion.div>
         <motion.div
           className="section-header"

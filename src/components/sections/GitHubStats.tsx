@@ -31,7 +31,7 @@ const GitHubStats: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}
         >
-          ACT VI &mdash; CONTRIBUTIONS
+          ACT VII &mdash; CONTRIBUTIONS
         </motion.div>
         <motion.div
           className="section-header"

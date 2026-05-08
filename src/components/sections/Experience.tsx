@@ -27,7 +27,7 @@ const Experience: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}
         >
-          ACT V &mdash; TIMELINE
+          ACT VI &mdash; TIMELINE
         </motion.div>
         <motion.div
           className="section-header"

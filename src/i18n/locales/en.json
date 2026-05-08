@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About",
     "skills": "Skills",
+    "studio": "Studio",
     "projects": "Projects",
     "experience": "Experience",
     "contact": "Contact"
@@ -40,6 +41,68 @@
       "database": "Databases",
       "devops": "DevOps",
       "tools": "Tools"
+    }
+  },
+  "studio": {
+    "title": "Director's Cut",
+    "subtitle": "Order the scenes to assemble the flow of a full-stack app.",
+    "monitor": "Cut monitor",
+    "slate": "Editing room",
+    "take": "Take 05 / Product",
+    "idleTitle": "Your turn in the edit",
+    "idleCopy": "Move the scenes until the product journey makes sense. Then review the cut.",
+    "scoreLabel": "Cut score",
+    "reelLabel": "Product scenes",
+    "moveUp": "Move scene up",
+    "moveDown": "Move scene down",
+    "check": "Review cut",
+    "shuffle": "Shuffle",
+    "reset": "Reset",
+    "scenes": [
+      {
+        "id": "brief",
+        "title": "Brief and architecture",
+        "role": "Act 01",
+        "cue": "Understand the problem, user, scope, and technical decisions."
+      },
+      {
+        "id": "ui",
+        "title": "Intentional interface",
+        "role": "Act 02",
+        "cue": "Design clear, accessible screens that are ready to use."
+      },
+      {
+        "id": "api",
+        "title": "API and business rules",
+        "role": "Act 03",
+        "cue": "Shape endpoints, validation, errors, and clean contracts."
+      },
+      {
+        "id": "data",
+        "title": "Persistent data",
+        "role": "Act 04",
+        "cue": "Store, query, and protect the information that matters."
+      },
+      {
+        "id": "deploy",
+        "title": "Deploy and observe",
+        "role": "Act 05",
+        "cue": "Ship, measure, adjust, and keep the product alive."
+      }
+    ],
+    "results": {
+      "perfect": {
+        "title": "Final cut approved",
+        "copy": "That's the rhythm: Carlos connects product, frontend, backend, data, and delivery without losing continuity."
+      },
+      "close": {
+        "title": "Strong edit",
+        "copy": "The story is nearly there. A technical transition needs polish, exactly where full-stack judgment helps."
+      },
+      "retry": {
+        "title": "Needs another take",
+        "copy": "Some scenes are still out of continuity. Reorder them and find the natural flow of a real app."
+      }
     }
   },
   "projects": {
