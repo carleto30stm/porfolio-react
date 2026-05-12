@@ -19,7 +19,6 @@ export const skills: Skill[] = [
   // Database
   { name: 'PostgreSQL', level: 82, category: 'database', icon: 'SiPostgresql' },
   { name: 'MongoDB', level: 80, category: 'database', icon: 'SiMongodb' },
-  { name: 'Redis', level: 68, category: 'database', icon: 'SiRedis' },
   { name: 'Prisma', level: 75, category: 'database', icon: 'SiPrisma' },
 
   // DevOps

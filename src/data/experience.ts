@@ -12,7 +12,7 @@ export const experiences: Experience[] = [
       'Desarrollo y participacion en arquitectura de microservicios con Spring Boot',
       'Desarrollo de frontend con React y Redux para paneles de administracion.',
     ],
-    tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker', 'Redis'],
+    tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker'],
     type: 'work',
   },
   {
