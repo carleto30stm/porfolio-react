@@ -55,7 +55,6 @@ export const projects: Project[] = [
       'Microservicio para generar archivos PDF a partir de plantillas y datos dinamicos, utilizando Java 8 y Spring Boot. Soporta generacion de facturas, reportes y documentos personalizados con integracion a OracleSQL para almacenamiento.',
     tech: ['Java 8 ', 'Spring Boot', 'OracleSQL', 'JPA', 'Maven', 'JUnit'],
     category: 'backend',
-    github: 'https://github.com/carleto30stm',
     featured: false,
   },
   {
@@ -63,9 +62,29 @@ export const projects: Project[] = [
     title: 'msVentas',
     description: 'Microservicio para gestionar ventas',
     longDescription:
-      'Microservicio que que valida recetas usando mensaje ADESFA para utenticar recetas medicas, utilizando Java 8 y Spring Boot.',
+      'Microservicio que valida recetas usando mensaje ADESFA para utenticar recetas medicas, utilizando Java 8 y Spring Boot.',
     tech: ['Java 8 ', 'Spring Boot', 'OracleSQL', 'JPA', 'Maven', 'JUnit'],
     category: 'backend',
+    featured: false,
+  },
+  {
+    id: '7',
+    title: 'msPresentacionDigital',
+    description: 'Microservicio para gestionar presentaciones digitales',
+    longDescription:
+      'Microservicio para consultar recetas validaciones de la misma, detalles de facturas y farmaceuticas , y presentaciones digitales, utilizando Java 8 y Spring Boot.',
+    tech: ['Java 8 ', 'Spring Boot', 'OracleSQL', 'JDBC', 'Maven', 'JUnit', 'Mockito', 'Swagger'],
+    category: 'backend',
+    featured: false,
+  },
+  {
+    id: '8',
+    title: 'App Barberia',
+    description: 'Aplicacion para gestionar una barberia',
+    longDescription:
+      'Aplicacion para gestionar una barberia, con funcionalidades para manejar citas, clientes, empleados y servicios, utilizando React Native y Expo.',
+    tech: ['React Native ', 'Expo', 'PostgreSQL', 'TailwindCSS', 'JWT'],
+    category: 'fullstack',
     github: 'https://github.com/carleto30stm',
     featured: false,
   },

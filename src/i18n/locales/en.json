@@ -117,6 +117,8 @@
     "view_code": "Code",
     "view_demo": "Demo",
     "view_details": "View Details",
+    "show_more": "Show more projects",
+    "show_less": "Show less",
     "close": "Close",
     "tech_stack": "Tech Stack",
     "featured": "Featured"

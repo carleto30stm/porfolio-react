@@ -16,12 +16,22 @@ const Projects: React.FC = () => {
   const { ref, inView } = useInView();
   const [filter, setFilter] = useState<Filter>('all');
   const [selected, setSelected] = useState<Project | null>(null);
+  const [showAll, setShowAll] = useState(false);
   const isDragging = React.useRef(false);
 
+  const VISIBLE_LIMIT = 6;
   const filters: Filter[] = ['all', 'fullstack', 'frontend', 'backend'];
 
   const filtered =
     filter === 'all' ? projects : projects.filter((p) => p.category === filter);
+
+  const visibleProjects = showAll ? filtered : filtered.slice(0, VISIBLE_LIMIT);
+  const hasMore = filtered.length > VISIBLE_LIMIT;
+
+  const handleFilterChange = (f: Filter) => {
+    setFilter(f);
+    setShowAll(false);
+  };
 
   return (
     <section id="projects" className={styles.section}>
@@ -52,7 +62,7 @@ const Projects: React.FC = () => {
             <button
               key={f}
               className={[styles.filterBtn, filter === f && styles.active].filter(Boolean).join(' ')}
-              onClick={() => setFilter(f)}
+              onClick={() => handleFilterChange(f)}
             >
               {t(`projects.filters.${f}`)}
             </button>
@@ -62,7 +72,7 @@ const Projects: React.FC = () => {
         {/* Grid */}
         <motion.div className={styles.grid} layout>
           <AnimatePresence mode="popLayout">
-            {filtered.map((project, i) => (
+            {visibleProjects.map((project, i) => (
               <motion.article
                 key={project.id}
                 className={styles.card}
@@ -133,6 +143,24 @@ const Projects: React.FC = () => {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* Show more / less */}
+        {hasMore && (
+          <motion.div
+            className={styles.showMoreWrapper}
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : undefined}
+            transition={{ duration: 0.4, delay: 0.3 }}
+          >
+            <button
+              className={styles.showMoreBtn}
+              onClick={() => setShowAll((v) => !v)}
+            >
+              {showAll ? t('projects.show_less') : `${t('projects.show_more')} (${filtered.length - VISIBLE_LIMIT})`}
+              <span className={[styles.showMoreArrow, showAll && styles.showMoreArrowUp].filter(Boolean).join(' ')} aria-hidden />
+            </button>
+          </motion.div>
+        )}
       </div>
 
       {/* Modal */}

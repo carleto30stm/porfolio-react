@@ -3,6 +3,50 @@
   background: var(--bg-secondary);
 }
 
+/* Show more / less */
+.showMoreWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.25rem;
+}
+
+.showMoreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-full);
+  color: var(--accent-gold);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.showMoreBtn:hover {
+  background: rgba(201, 162, 39, 0.1);
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 18px rgba(201, 162, 39, 0.18);
+}
+
+.showMoreArrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  transition: transform 0.3s ease;
+}
+
+.showMoreArrowUp {
+  transform: rotate(180deg);
+}
+
 .filters {
   display: flex;
   flex-wrap: wrap;
