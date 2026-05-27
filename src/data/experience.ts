@@ -5,8 +5,8 @@ export const experiences: Experience[] = [
     id: '1',
     role: 'Fullstack Developer',
     company: 'Ayi Group',
-    period: '2025 - Presente',
-    startDate: '2025-03',
+    period: '2023 - Presente',
+    startDate: '2023-02',
     description: [
       'Desarrollo de msServicios para cliente relacionado a Farmacias',
       'Desarrollo y participacion en arquitectura de microservicios con Spring Boot',
