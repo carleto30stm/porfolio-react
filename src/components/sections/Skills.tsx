@@ -8,11 +8,12 @@ import {
   SiDocker, SiGit, SiLinux,
   SiJest, SiFigma, SiPostman,
 } from 'react-icons/si';
+import type { IconType } from 'react-icons';
 import { useInView } from '../../hooks/useInView';
 import { skills } from '../../data/skills';
 import styles from './Skills.module.css';
 
-const ICON_MAP: Record<string, React.ElementType> = {
+const ICON_MAP: Record<string, IconType> = {
   SiReact, SiTypescript, SiNextdotjs, SiJavascript, SiHtml5, SiTailwindcss,
   SiNodedotjs, SiExpress, SiPython, SiGraphql,
   SiPostgresql, SiMongodb, SiRedis, SiPrisma,

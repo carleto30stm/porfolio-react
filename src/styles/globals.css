@@ -2,6 +2,8 @@
   /* Colors */
   --bg-primary: #0a0a0f;
   --bg-secondary: #111118;
+  /* Fondo de sección translúcido: deja ver el mundo 3D detrás */
+  --bg-section: rgba(17, 17, 24, 0.72);
   --bg-card: #16161f;
   --bg-card-hover: #1e1e2a;
 

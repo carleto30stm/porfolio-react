@@ -1,6 +1,6 @@
 .section {
   padding: var(--section-padding);
-  background: var(--bg-secondary);
+  background: var(--bg-section);
 }
 
 .wrapper {

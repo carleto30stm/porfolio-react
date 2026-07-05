@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FiHome, FiUser, FiCpu, FiFilm, FiFolder, FiBriefcase, FiMail, FiX } from 'react-icons/fi';
+import type { IconType } from 'react-icons';
 import type { Language } from '../../types';
 import styles from './Navbar.module.css';
 
 const NAV_ITEMS = ['home', 'about', 'skills', 'studio', 'projects', 'experience', 'contact'] as const;
 
-const NAV_ICONS: Record<string, React.ElementType> = {
+const NAV_ICONS: Record<string, IconType> = {
   home: FiHome,
   about: FiUser,
   skills: FiCpu,

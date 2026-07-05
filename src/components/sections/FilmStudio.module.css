@@ -1,7 +1,7 @@
 .section {
   padding: var(--section-padding);
   background:
-    linear-gradient(180deg, rgba(10, 10, 15, 0.94), rgba(17, 13, 8, 0.96)),
+    linear-gradient(180deg, rgba(10, 10, 15, 0.78), rgba(17, 13, 8, 0.84)),
     radial-gradient(circle at 24% 22%, rgba(232, 181, 90, 0.14), transparent 34%),
     radial-gradient(circle at 78% 64%, rgba(0, 212, 255, 0.08), transparent 30%);
   position: relative;
