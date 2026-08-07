@@ -202,7 +202,7 @@ const About: React.FC = () => {
           >
             <Button
               as="a"
-              href="https://drive.google.com/uc?export=download&id=1MQxM4DTQHQlICMccqbkFycnEczMC63DZ"
+              href="https://drive.google.com/uc?export=download&id=1rh79UgPMqU7_TdT2FrSHkNtGgYw5QMOU"
               variant="primary"
               size="md"
               external
@@ -215,5 +215,4 @@ const About: React.FC = () => {
     </section>
   );
 };
-
 export default About;
