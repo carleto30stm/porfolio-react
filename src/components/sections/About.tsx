@@ -8,9 +8,9 @@ import Button from '../ui/Button';
 import styles from './About.module.css';
 
 const FILM_IMAGES = [
-  '/carrucel/avatar.jpg',
-  '/carrucel/carlos_cicli.jpg',
-  '/carrucel/jack.jpg',
+  'https://res.cloudinary.com/vleu5qxv/image/upload/f_auto,q_auto/carleto',
+  'https://res.cloudinary.com/vleu5qxv/image/upload/v1787433627/carlos_cicli.jpg',
+  'https://res.cloudinary.com/vleu5qxv/image/upload/v1787433632/jack.jpg'
 ] as const;
 
 const FRAME_LABELS = ['▲ 24A', '▲ 25A', '▲ 26A'] as const;
@@ -202,10 +202,10 @@ const About: React.FC = () => {
           >
             <Button
               as="a"
-              href="https://drive.google.com/uc?export=download&id=1rh79UgPMqU7_TdT2FrSHkNtGgYw5QMOU"
+              href="/cv/CV-CarlosAlbertoCampuzanoTorres_2026_8_5.pdf"
+              download
               variant="primary"
               size="md"
-              external
             >
               <FiDownload /> {t('about.download_cv')}
             </Button>

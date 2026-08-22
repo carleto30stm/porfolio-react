@@ -8,6 +8,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   as?: 'button' | 'a';
   href?: string;
   external?: boolean;
+  download?: boolean | string;
   children: React.ReactNode;
 }
 
@@ -17,6 +18,7 @@ const Button: React.FC<ButtonProps> = ({
   as = 'button',
   href,
   external,
+  download,
   children,
   className = '',
   ...props
@@ -27,6 +29,7 @@ const Button: React.FC<ButtonProps> = ({
     return (
       <motion.a
         href={href}
+        download={download}
         className={classes}
         target={external ? '_blank' : undefined}
         rel={external ? 'noopener noreferrer' : undefined}
