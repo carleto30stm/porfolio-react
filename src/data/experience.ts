@@ -5,7 +5,7 @@ export const experiences: Experience[] = [
     id: '1',
     role: 'Fullstack Developer',
     company: 'Ayi Group',
-    period: '2023 - Presente',
+    period: '2025 - Presente',
     startDate: '2023-02',
     description: [
       'Desarrollo de msServicios para cliente relacionado a Farmacias',
@@ -30,19 +30,19 @@ export const experiences: Experience[] = [
     tech: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Express', 'AWS'],
     type: 'work',
   },
-  {
-    id: '3',
-    role: 'Junior Developer',
-    company: 'Freelance',
-    period: '2019 - 2020',
-    startDate: '2019-01',
-    endDate: '2020-05',
-    description: [
-      'Desarrollo de sitios web y landing pages para pequeñas empresas.',
-    ],
-    tech: ['JavaScript', 'HTML', 'CSS', 'Node.js', 'MySQL'],
-    type: 'work',
-  },
+  // {
+  //   id: '3',
+  //   role: 'Junior Developer',
+  //   company: 'Freelance',
+  //   period: '2019 - 2020',
+  //   startDate: '2019-01',
+  //   endDate: '2020-05',
+  //   description: [
+  //     'Desarrollo de sitios web y landing pages para pequeñas empresas.',
+  //   ],
+  //   tech: ['JavaScript', 'HTML', 'CSS', 'Node.js', 'MySQL'],
+  //   type: 'work',
+  // },
   {
     id: '4',
     role: 'Desarrollador Web',

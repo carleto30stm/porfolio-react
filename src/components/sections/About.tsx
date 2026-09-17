@@ -36,7 +36,7 @@ const filmSlideVariants: Variants = {
 };
 
 const STATS = [
-  { key: 'experience', value: '5+' },
+  { key: 'experience', value: '3+' },
   { key: 'projects', value: '30+' },
   { key: 'technologies', value: '20+' },
 ] as const;
