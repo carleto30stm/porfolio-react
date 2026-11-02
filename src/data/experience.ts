@@ -5,7 +5,7 @@ export const experiences: Experience[] = [
     id: '1',
     role: 'Fullstack Developer',
     company: 'Ayi Group',
-    period: '2025 - Presente',
+    period: '2024',
     startDate: '2023-02',
     description: [
       'Desarrollo de msServicios para cliente relacionado a Farmacias',
@@ -19,7 +19,7 @@ export const experiences: Experience[] = [
     id: '2',
     role: 'Fullstack Developer',
     company: 'Freelance',
-    period: '2023 - Presente',
+    period: '2023 ',
     startDate: '2023-06',
     description: [
       'Desarrollo de aplicaciones web a medida para clientes en sectores retail y medicos.',

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { FiDownload, FiCode, FiLayers, FiZap } from 'react-icons/fi';
+// import { FiDownload, FiCode, FiLayers, FiZap } from 'react-icons/fi';
 import { useInView } from '../../hooks/useInView';
-import Button from '../ui/Button';
+// import Button from '../ui/Button';
 import styles from './About.module.css';
 
 const FILM_IMAGES = [
@@ -200,15 +200,15 @@ const About: React.FC = () => {
             initial="hidden"
             animate={inView ? 'show' : 'hidden'}
           >
-            <Button
-              as="a"
+            {/* <Button */}
+              {/* as="a"
               href="/cv/CV-CarlosAlbertoCampuzanoTorres_2026_8_5.pdf"
               download
               variant="primary"
               size="md"
             >
               <FiDownload /> {t('about.download_cv')}
-            </Button>
+            </Button> */}
           </motion.div>
         </div>
       </div>
